@@ -77,8 +77,14 @@ WSGI_APPLICATION = 'review.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME':'review_db',
+         'USER':os.environ['REVIEW_USER'],
+         'PASSWORD':os.environ['REVIEW_PASSWORD'],
+         'HOST':os.environ['REVIEW_HOST'],
+         'PORT':'3306'
     }
 }
 
